@@ -81,7 +81,7 @@ alert(datas);
                 //document.domain="spirit.fh-schmalkalden.de";
                 for(var ci=0;ci<courses.length;ci++){
                     for(var semester = 1;semester<7;semester++){
-                        var request = $.get(document.domain + "/rest/1.0/schedule?callback=?"  ,
+                        var request = $.get("../rest/1.0/schedule?callback=?"  ,
                                         
                         {
                             classname:"" + courses[ci] + semester                        
