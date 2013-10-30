@@ -105,7 +105,7 @@ var News = function () {
         loadNews: function() {
 
             
-            var bac = $.getJSON(document.domain + "/rest/1.0/news", function(data){                                       
+            var bac = $.getJSON("../rest/1.0/news", function(data){                                       
 
                 var i = 0;
                 $.each(data, function() {
