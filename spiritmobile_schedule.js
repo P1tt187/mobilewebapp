@@ -330,6 +330,9 @@ var Schedule = function() {
             
             schedule_datapair.setKey(this.schedules.length);
             schedule_datapair.setValue(jsonproc.loadDataFromJSONSource());
+            if(schedule_datapair.getValue()=="[]"){
+                return;
+            }
             
             this.schedules.push(schedule_datapair);            
         },
