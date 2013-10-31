@@ -57,12 +57,12 @@
                             x.overrideMimeType("application/j-son;charset=UTF-8");
                         }
 
-                    },
+                    },/*
                     success:function(datas, textStatus, jqXHR){
 alert(datas);
                          var returnedData = jQuery.parseJSON(datas.substr(datas.indexOf('{')));
                         },
-                    
+                    */
                     error: function(x,e) { if(x.status==0){
                             console.log('You are offline!!n Please Check Your Network.');
                         }else if(x.status==404){
@@ -81,7 +81,7 @@ alert(datas);
                 //document.domain="spirit.fh-schmalkalden.de";
                 for(var ci=0;ci<courses.length;ci++){
                     for(var semester = 1;semester<7;semester++){
-                        var request = $.get("../rest/1.0/schedule?callback=?"  ,
+                        var request = $.getJSON("../rest/1.0/schedule?"  ,
                                         
                         {
                             classname:"" + courses[ci] + semester                        
