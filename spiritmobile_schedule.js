@@ -446,7 +446,8 @@ var Schedule = function() {
         },   
         
         getScheduleName: function(schedule) {
-        
+            
+            console.log(schedule);        
             return schedule[0].getElementData()[4].getValue();
         
         },
