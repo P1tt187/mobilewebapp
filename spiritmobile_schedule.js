@@ -447,7 +447,7 @@ var Schedule = function() {
         
         getScheduleName: function(schedule) {
         
-            return schedule[0].getElementData()[4].getValue();
+            return schedules[0].getElementData()[4].getValue();
         
         },
         
