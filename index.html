@@ -124,7 +124,7 @@
                     
                     for(var g=0; g<sd.schedules.length; g++) {
                         console.log(sd.schedules);
-                        var name =  sd.getScheduleName(sd.getScheduleByIndex(g).getValue());//sd.schedules[g].getValue()[0].getElementData()[4].getValue();
+                        var name =  sd.getScheduleName(sd.schedules[g].getValue());//sd.schedules[g].getValue()[0].getElementData()[4].getValue();
                         $('#scheds').append('<li id="' + name + '">' +  
                             '<a href="#schedulePage-' + name + '-' + 0 + '">' + name + '</a>' +
                             '</li>');
