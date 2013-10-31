@@ -61,7 +61,7 @@
                     success:function(datas, textStatus, jqXHR){
 //alert(datas);
                          var returnedData = jQuery.parseJSON(datas.substr(datas.indexOf('{')));
-                        }),
+                        },
                     
                     error: function(x,e) { if(x.status==0){
                             console.log('You are offline!!n Please Check Your Network.');
