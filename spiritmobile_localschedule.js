@@ -162,7 +162,7 @@ var LocalSchedule = function() {
                         next_str = '#localSchedule-' + getDay(i+1);
                     
                     $('body').append(
-                        '<div data-role="page" id="localSchedule-' + getDay(i) + '" data-url="localSchedule-' + getDay(i) + '">'                    +
+                        '<article data-role="page" id="localSchedule-' + getDay(i) + '" data-url="localSchedule-' + getDay(i) + '">'                    +
                             '<div data-role="header">'                                      + 
                                 '<h1>' + getDay(i) + '</h1>'                                +
                                 '<a class="button" href="' + back_str + '">Back</a>'        +
@@ -172,9 +172,10 @@ var LocalSchedule = function() {
                                 '<ul data-role="listview" class="ui-listview" id="schedulelist-'+ getDay(i) +'">'                    +
                                 '</ul>'                                                     +
                             '</div>'                                                        +
-                        '</div>'    
+                        '</article>'    
                     );
-                            
+                    
+                                              
                     if (next_str == '') {
                         $('#localSchedule-' + getDay(4) + ' a').remove(':contains("Next")');
                     }
@@ -194,7 +195,27 @@ var LocalSchedule = function() {
                     
                     
                 }
-                
+                /** add swipe events */
+                    //******************************************************
+                     $('article').bind("swipeleft", function(){
+						var nextpage = $(this).next('article[data-role="page"]');
+						// swipe using id of next page if exists
+						if (nextpage.length > 0) {
+						  $.mobile.changePage(nextpage, {transition: "slide",
+						reverse: false}, true, true);
+						}
+
+					  });
+
+					 $('article').bind("swiperight", function(){
+						var prevpage = $(this).prev('article[data-role="page"]');
+						if (prevpage.length > 0) {
+						$.mobile.changePage(prevpage, {transition: "slide",
+						reverse: true}, true, true);
+						}
+
+					  });                   
+                    //******************************************************  
             }
             
             CreateLocalSchedulePages();

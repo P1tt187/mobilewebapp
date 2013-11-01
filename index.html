@@ -8,12 +8,19 @@
 
 
         <!-- links to css --> 
-        <link rel="stylesheet" href="jquery.mobile-1.0.min.css" />
+        <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
         <link rel="icon" href="images/icon.png" type="image/x-icon"/>
 
         <!-- including jquery & jquery mobile -->
-        <script type="text/javascript" src="jquery-1.6.4.js"></script>
-        <script type="text/javascript" src="jquery.mobile-1.0.min.js"></script>
+        <script type="text/javascript" src="jquery-1.9.1.js"></script>
+        
+        <script>
+			$(document).on('mobileinit', function () {
+				$.mobile.ignoreContentEnabled = true;
+			});
+		</script> 
+        
+        <script type="text/javascript" src="jquery.mobile-1.3.2.js"></script>
 
         <!-- including JS-Scripts for News, Timetable, MyTimetable & Preferences -->
         <script type="text/javascript" src="spiritmobile_news.js"></script>
@@ -219,7 +226,7 @@
                     <div class="aboutpage">
                         <strong>Spirit Mobile</strong>
                         <br/>
-                        "Version 0.4-4"
+                        "Version 0.5.1"
                         <br/>
                         By 
                         <br/>

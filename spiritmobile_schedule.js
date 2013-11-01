@@ -557,7 +557,7 @@ var Schedule = function() {
                 }
                 
                 // Erstelle SchedulePageGerüst eines Tages
-                $('body').append('<div data-role="page" id="schedulePage-' + sched_name + '-' + i + '"></div>');
+                $('body').append('<article data-role="page" id="schedulePage-' + sched_name + '-' + i + '"></article>');
                 $('#schedulePage-' + sched_name + '-' + i).append(
                     '<div data-role="header">'                                             + 
                         '<h1>' + getDay(i) + '</h1>'           +
@@ -568,6 +568,8 @@ var Schedule = function() {
                         '<ul data-role="listview" data-inset="true" id="scheduleDay-' + getDay(i) + '"></ul>' +
                     '</div>'
                 );
+                
+                
                     
                 // Löscht den Next Button, sobald die letzte Seite erreicht wurde
                 if (next_str == '') {
@@ -600,6 +602,28 @@ var Schedule = function() {
                 
                 
             }
+            
+                   /** add swipe events */
+                  //******************************************************
+                     $('article').bind("swipeleft", function(){
+						var nextpage = $(this).next('article[data-role="page"]');
+						// swipe using id of next page if exists
+						if (nextpage.length > 0) {
+						  $.mobile.changePage(nextpage, {transition: "slide",
+						reverse: false}, true, true);
+						}
+
+					  });
+
+					 $('article').bind("swiperight", function(){
+						var prevpage = $(this).prev('article[data-role="page"]');
+						if (prevpage.length > 0) {
+						$.mobile.changePage(prevpage, {transition: "slide",
+						reverse: true}, true, true);
+						}
+
+					  });                   
+                  //******************************************************
             
             this.fillSchedulePages(schedule);
             
