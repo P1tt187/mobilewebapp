@@ -449,8 +449,7 @@ var Schedule = function() {
         },   
         
         getScheduleName: function(schedule) {
-            
-            console.log(schedule);        
+                
             return schedule[0].getElementData()[4].getValue();
         
         },
@@ -570,7 +569,7 @@ var Schedule = function() {
                 );
                 /** add swipe events */
                  //******************************************************
-                     $("#schedulePage-' + sched_name + '-' + i + '").bind("swipeleft", function(){
+                     $("#schedulePage-" + sched_name + '-' + i ).bind("swipeleft", function(){
 						var nextpage = $(this).next(next_str);
 						// swipe using id of next page if exists
 						if (nextpage.length > 0) {
@@ -582,7 +581,7 @@ var Schedule = function() {
                 
                   
 
-					 $("#schedulePage-' + sched_name + '-' + i + '").bind("swiperight", function(){
+					 $("#schedulePage-" + sched_name + '-' + i ).bind("swiperight", function(){
 						var prevpage = $(this).prev(back_str);
 						if (prevpage.length > 0) {
 						$.mobile.changePage(prevpage, {transition: "slide",
