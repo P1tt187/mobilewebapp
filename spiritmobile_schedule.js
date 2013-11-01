@@ -568,8 +568,29 @@ var Schedule = function() {
                         '<ul data-role="listview" data-inset="true" id="scheduleDay-' + getDay(i) + '"></ul>' +
                     '</div>'
                 );
+                /** add swipe events */
+                 //******************************************************
+                     $("#schedulePage-' + sched_name + '-' + i + '").bind("swipeleft", function(){
+						var nextpage = $(this).next(next_str);
+						// swipe using id of next page if exists
+						if (nextpage.length > 0) {
+						  $.mobile.changePage(nextpage, {transition: "slide",
+						reverse: false}, true, true);
+						}
+
+					  });
                 
-                
+                  
+
+					 $("#schedulePage-' + sched_name + '-' + i + '").bind("swiperight", function(){
+						var prevpage = $(this).prev(back_str);
+						if (prevpage.length > 0) {
+						$.mobile.changePage(prevpage, {transition: "slide",
+						reverse: true}, true, true);
+						}
+
+					  });                   
+                  //******************************************************
                     
                 // Löscht den Next Button, sobald die letzte Seite erreicht wurde
                 if (next_str == '') {
@@ -603,28 +624,7 @@ var Schedule = function() {
                 
             }
             
-                   /** add swipe events */
-                  //******************************************************
-                     $('article').bind("swipeleft", function(){
-						var nextpage = $(this).next('article[data-role="page"]');
-						// swipe using id of next page if exists
-						if (nextpage.length > 0) {
-						  $.mobile.changePage(nextpage, {transition: "slide",
-						reverse: false}, true, true);
-						}
-
-					  });
-
-					 $('article').bind("swiperight", function(){
-						var prevpage = $(this).prev('article[data-role="page"]');
-						if (prevpage.length > 0) {
-						$.mobile.changePage(prevpage, {transition: "slide",
-						reverse: true}, true, true);
-						}
-
-					  });                   
-                  //******************************************************
-            
+                   
             this.fillSchedulePages(schedule);
             
         },

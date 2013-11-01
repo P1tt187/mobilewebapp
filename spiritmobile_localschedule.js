@@ -180,6 +180,28 @@ var LocalSchedule = function() {
                         $('#localSchedule-' + getDay(4) + ' a').remove(':contains("Next")');
                     }
                     
+                    /** add swipe events */
+                    //******************************************************
+                     $('#localSchedule-' + getDay(i)).bind("swipeleft", function(){
+						var nextpage = $(this).next(next_str');
+						// swipe using id of next page if exists
+						if (nextpage.length > 0) {
+						  $.mobile.changePage(nextpage, {transition: "slide",
+						reverse: false}, true, true);
+						}
+
+					  });
+
+					 $('#localSchedule-' + getDay(i)).bind("swiperight", function(){
+						var prevpage = $(this).prev(back_str);
+						if (prevpage.length > 0) {
+						$.mobile.changePage(prevpage, {transition: "slide",
+						reverse: true}, true, true);
+						}
+
+					  });                   
+                    //******************************************************  
+                    
                     for (var j=0; j<7; j++) {
                         $('#schedulelist-' + getDay(i)).append(
                             '<li id="timeslot-' + j + '">'                                  +
@@ -195,27 +217,7 @@ var LocalSchedule = function() {
                     
                     
                 }
-                /** add swipe events */
-                    //******************************************************
-                     $('article').bind("swipeleft", function(){
-						var nextpage = $(this).next('article[data-role="page"]');
-						// swipe using id of next page if exists
-						if (nextpage.length > 0) {
-						  $.mobile.changePage(nextpage, {transition: "slide",
-						reverse: false}, true, true);
-						}
-
-					  });
-
-					 $('article').bind("swiperight", function(){
-						var prevpage = $(this).prev('article[data-role="page"]');
-						if (prevpage.length > 0) {
-						$.mobile.changePage(prevpage, {transition: "slide",
-						reverse: true}, true, true);
-						}
-
-					  });                   
-                    //******************************************************  
+                
             }
             
             CreateLocalSchedulePages();
