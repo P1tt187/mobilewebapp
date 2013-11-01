@@ -59,7 +59,16 @@
 
                 var courses = ['bai','bamc','bawi','bamm','bais','mai'];		
   
-                 $.ajaxSetup({async: false});
+                 //$.ajaxSetup({async: false});
+                 $.ajaxSetup({
+					  beforeSend: function() {
+						 $('#logo').css('background', 'url(images/ajax-loader.gif) no-repeat')
+					  },
+					  complete: function(){
+						 $('#logo').css('background', 'none')
+					  },
+					  success: function() {}
+					});
  
                 //document.domain="spirit.fh-schmalkalden.de";
                 for(var ci=0;ci<courses.length;ci++){
