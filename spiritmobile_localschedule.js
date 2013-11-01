@@ -183,7 +183,7 @@ var LocalSchedule = function() {
                     /** add swipe events */
                     //******************************************************
                      $('#localSchedule-' + getDay(i)).bind("swipeleft", function(){
-						var nextpage = $(this).next(next_str');
+						var nextpage = $(this).next(next_str);
 						// swipe using id of next page if exists
 						if (nextpage.length > 0) {
 						  $.mobile.changePage(nextpage, {transition: "slide",
