@@ -61,6 +61,8 @@
   
                  //$.ajaxSetup({async: false});
                  $.ajaxSetup({
+					  async: false,
+					 
 					  beforeSend: function() {
 						 $('#logo').css('background', 'url(images/ajax-loader.gif) no-repeat')
 					  },
