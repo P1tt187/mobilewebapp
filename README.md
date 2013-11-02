@@ -18,6 +18,7 @@ of Applied Science Schmalkalden, Germany.
 1. Get your Smartphone/Table.
 2. Start up yor Browser.
 3. Type in http://spirit.fh-schmalkalden.de/ @ adress bar.
+4. Klick on the **Mobile**-Button
 4. Add site to your favourites.
 5. Goto options menu & add favourite to your homescreen.
 6. A shortcut will appear on your homescreen.
