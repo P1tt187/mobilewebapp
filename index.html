@@ -63,10 +63,10 @@
                 $.ajaxSetup({
                     async: false,
                     beforeSend: function() {
-                        $('#logo').css('background', 'url(images/ajax-loader.gif) no-repeat');
+                        $('#panel').css('background', 'url(images/ajax-loader.gif) no-repeat');
                     },
                     complete: function() {
-                        $('#logo').css('background', 'none');
+                        $('#panel').css('background', 'none');
                     },
                     success: function() {
                     }
