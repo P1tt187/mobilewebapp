@@ -78,12 +78,13 @@
 
 
                 if (oldSchedule === null || new Date(oldSchedule.date).getDate() !== new Date().getDate()) {
-                    oldSchedule = function() {
+                    var oldScheduleStructure = function() {
                         return {
                             "date": new Date().getTime(),
                             "schedules": []
                         };
                     };
+                    oldSchedule = new oldScheduleStructure();
                     for (var ci = 0; ci < courses.length; ci++) {
                         for (var semester = 1; semester < 7; semester++) {
                             $.get("../rest/1.0/schedule?&classname=" + courses[ci] + semester, function(data) {
@@ -100,7 +101,7 @@
 
                     window.localStorage.setItem("oldSchedule", JSON.stringify(oldSchedule()));
                 } else {
-                alert(JSON.stringify(oldSchedule));
+                
                     for (var i = 0; i < oldSchedule.schedules.length; i++) {
                         sd.loadScheduleData(oldSchedule.schedules[i]);
                     }
