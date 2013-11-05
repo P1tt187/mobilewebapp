@@ -38,3 +38,4 @@ screen and can be used.
 * Firefox(Android) -> Working
 * Android Browser -> Working
 * Opera Mini -> not Working
+* Safari(iOS) -> Working
