@@ -541,10 +541,10 @@ var Schedule = function() {
             for (var i=0; i<5; i++) {
                 
                 if (i<1) {
-                    back_str = '#p3'
+                    back_str = '#p3';
                 }
                 else {
-                    back_str = '#schedulePage-' + sched_name + '-' + (i - 1)
+                    back_str = '#schedulePage-' + sched_name + '-' + (i - 1);
                 }
                 
                 if (i>=4) {
