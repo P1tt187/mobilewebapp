@@ -86,21 +86,19 @@
                     };
                     for (var ci = 0; ci < courses.length; ci++) {
                         for (var semester = 1; semester < 7; semester++) {
-                            $.get("../rest/1.0/schedule?&classname=" + courses[ci] + semester,function(data){
+                            $.get("../rest/1.0/schedule?&classname=" + courses[ci] + semester, function(data) {
                                 sd.loadScheduleData(data);
-                                oldSchedule.schedules.push("{name:"+ courses[ci] + semester +", data:" + data +"}");
+                                oldSchedule.schedules.push(data);
                             });
-                            
+
                             //sd.loadScheduleData("../rest/1.0/schedule?&classname=" + courses[ci] + semester);
                         }
-                    }                    
+                    }
 
                     window.localStorage.setItem("oldSchedule", JSON.stringify(oldSchedule()));
                 } else {
-                    for (var ci = 0; ci < courses.length; ci++) {
-                        for (var semester = 1; semester < 7; semester++) {
-                           sd.loadScheduleData(oldSchedule["" + courses[ci] + semester]); 
-                        }
+                    for (var i = 0; i < oldSchedule.schedules.length; i++) {
+                        sd.loadScheduleData(oldSchedule.schedules[i]);
                     }
                 }
 
@@ -160,8 +158,8 @@
                     var pop_w = popup.width();
                     var pop_h = popup.height();
 
-                    var lft = ((wdth / 2) - (pop_w / 2));                    
-                    
+                    var lft = ((wdth / 2) - (pop_w / 2));
+
                     var viewportheight = window.innerHeight;
 
                     var newtop = (window.pageYOffset + (viewportheight / 2)) - (pop_h / 2);
@@ -205,7 +203,7 @@
                     popup.append(buttongroup);
                     popup.appendTo('body');
                 });
-              
+
             });
 
         </script>        
