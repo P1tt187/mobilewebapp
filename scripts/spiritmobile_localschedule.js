@@ -132,7 +132,7 @@ var LocalSchedule = function() {
                 m_timeslot: timeslot,
                 m_data: data,
                 m_id: index
-            }
+            };
             
         },
         
