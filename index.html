@@ -74,6 +74,7 @@
 
                 //document.domain="spirit.fh-schmalkalden.de";
                 var oldScheduleDate =new Date(window.localStorage.getItem("oldScheduleDate"));
+                
                 if (oldScheduleDate === null || oldScheduleDate.getDate() !== new Date().getDate()) {
                     for (var ci = 0; ci < courses.length; ci++) {
                         for (var semester = 1; semester < 7; semester++) {
