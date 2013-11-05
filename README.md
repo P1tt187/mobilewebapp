@@ -1,5 +1,5 @@
 #SpiritMobile @GitHUb  README-FILE 
-->version 0.4.5<-
+version 0.4.5
    					                                                 
 
 ## A. What's SpiritMobile? 
@@ -29,3 +29,12 @@ screen and can be used.
 7. Start SpiritMobile Webapp via shortcut
 8. Navigate through the menus
 9. Have fun :)
+
+##D. Testet Browsers
+
+* Firefox -> Working
+* Chromium -> Working
+* Chrome(Android) -> Working
+* Firefox(Android) -> Working
+* Android Browser -> Working
+* Opera Mini -> not Working
