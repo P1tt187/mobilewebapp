@@ -88,10 +88,10 @@
                     for (var ci = 0; ci < courses.length; ci++) {
                         for (var semester = 1; semester < 7; semester++) {
                             $.get("../rest/1.0/schedule?&classname=" + courses[ci] + semester, function(data) {
-                                
-                                data= JSON.stringify(data);
+
+                                data = JSON.stringify(data);
                                 sd.loadScheduleData(data);
-                                
+
                                 oldSchedule.schedules.push(data);
                             });
 
@@ -101,7 +101,7 @@
 
                     window.localStorage.setItem("oldSchedule", JSON.stringify(oldSchedule));
                 } else {
-                
+
                     for (var i = 0; i < oldSchedule.schedules.length; i++) {
                         sd.loadScheduleData(oldSchedule.schedules[i]);
                     }
@@ -246,7 +246,9 @@
                         </div>
 
                         <div class="ui-block-b" id="menuitem_settings">
-                            <img src="images/menu_settings.png" />
+                            <a href="#menuitem_settings">
+                                <img src="images/menu_settings.png" />
+                            </a>
                         </div>
 
                         <div class="ui-block-a">
