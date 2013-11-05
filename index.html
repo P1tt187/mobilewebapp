@@ -72,20 +72,28 @@
                     }
                 });
 
+window.localStorage.clear();
                 //document.domain="spirit.fh-schmalkalden.de";
-                var oldScheduleDate =new Date(window.localStorage.getItem("oldScheduleDate"));
+                var oldSchedule = JSON.parse(window.localStorage.getItem("oldSchedule"));                        
+      
                 
-                if (oldScheduleDate === null || oldScheduleDate.getDate() !== new Date().getDate()) {
+                if (oldSchedule === null || new Date(oldSchedule.date).getDate() !== new Date().getDate()) {
                     for (var ci = 0; ci < courses.length; ci++) {
                         for (var semester = 1; semester < 7; semester++) {
 
                             sd.loadScheduleData("../rest/1.0/schedule?&classname=" + courses[ci] + semester);
                         }
                     }
-                    window.localStorage.setItem("oldScheduleDate",new Date().getTime());
-                    window.localStorage.setItem("oldSchedule",JSON.stringify(sd.schedules));
+                    oldSchedule =  function () {
+                    return {
+                        "date":new Date().getTime(),
+                        "schedules":sd.schedules
+                    };
+                };                 
+                    
+                    window.localStorage.setItem("oldSchedule",JSON.stringify(oldSchedule()));
                 } else {
-                    sd.schedules = JSON.parse(window.localStorage.getItem("oldSchedule"));
+                    sd.schedules = oldSchedule.schedules;
                 }
 
 

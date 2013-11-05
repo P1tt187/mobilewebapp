@@ -153,11 +153,11 @@ var LocalSchedule = function() {
                 for (var i=0; i<5; i++) {
                     
                     if (i<1) 
-                        back_str = '#p1'
+                        back_str = '#p1';
                     else 
                         back_str = '#localSchedule-' + getDay(i-1);
                     if (i>=4) 
-                        next_str = ''
+                        next_str = '';
                     else
                         next_str = '#localSchedule-' + getDay(i+1);
                     
