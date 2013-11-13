@@ -13,38 +13,17 @@ var LocalStorage = {
     },
     
     createPopUp: function(e) {
-        
-        var wdth = $('body').width();
-        var hght = $('body').height();
+              
         var popup = $('<div class="ui-loader ui-overlay-shadow ui-corner-all ui-body-a pop in"></div>');
         popup.css({
-            display:'block',
-            'width': (wdth/2), 
-           // 'height': (hght/4)- '20%', 
-            'height': '20%', 
+            display: 'block',
             'top': '30%',
             'left': '20%',
-            'margin-left': '0px', 
+            'right': '20%',
+            'margin-left': '0px',
             'padding': '10px 0px'
         });
         
-        var pop_w = popup.width();
-        var pop_h = popup.height();
-        
-        var lft = ((wdth/2) - (pop_w/2));
-        var tp = ((hght/2) - (pop_h)/2);
-        
-        var viewportwidth = window.innerWidth;
-        var viewportheight = window.innerHeight;
-        
-        var newtop = (window.pageYOffset + (viewportheight/2)) - (pop_h/2);
-        /*
-        popup.css({
-            'display': 'block', 
-            'top': newtop, 
-            'left': lft
-        });
-        */
         var buttonyes = $('<a href="#" data-role="button">Yes</a>');
         buttonyes.buttonMarkup({
             theme: "a"
