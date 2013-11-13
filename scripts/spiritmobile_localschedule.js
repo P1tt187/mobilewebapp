@@ -19,7 +19,7 @@ var LocalStorage = {
             display: 'block',
             'top': '30%',
             'left': '20%',
-            'right': '20%',
+            'right': '10%',
             'margin-left': '0px',
             'padding': '10px 0px'
         });
