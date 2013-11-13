@@ -18,8 +18,12 @@ var LocalStorage = {
         var hght = $('body').height();
         var popup = $('<div class="ui-loader ui-overlay-shadow ui-corner-all ui-body-a pop in"></div>');
         popup.css({
+            display:'block',
             'width': (wdth/2), 
-            'height': (hght/4)- '20%', 
+           // 'height': (hght/4)- '20%', 
+            'height': '20%', 
+            'top': '30%',
+            'left': '20%',
             'margin-left': '0px', 
             'padding': '10px 0px'
         });
@@ -34,13 +38,13 @@ var LocalStorage = {
         var viewportheight = window.innerHeight;
         
         var newtop = (window.pageYOffset + (viewportheight/2)) - (pop_h/2);
-        
+        /*
         popup.css({
             'display': 'block', 
             'top': newtop, 
             'left': lft
         });
-        
+        */
         var buttonyes = $('<a href="#" data-role="button">Yes</a>');
         buttonyes.buttonMarkup({
             theme: "a"
