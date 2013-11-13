@@ -155,7 +155,7 @@ var LocalSchedule = function() {
                             );
 
 
-                    if (next_str == '') {
+                    if (next_str ==='') {
                         $('#localSchedule-' + getDay(4) + ' a').remove(':contains("Next")');
                     }
 
@@ -197,7 +197,7 @@ var LocalSchedule = function() {
 
                 }
 
-            }
+            };
 
             CreateLocalSchedulePages();
 
@@ -235,8 +235,8 @@ function removeEvent(e) {
     for (var f = 0; f < len; f++) {
         key_number = window.localStorage.key(f);
         item = window.localStorage.getItem(key_number);
-        if (item != null)
-            if ((JSON.parse(item)).m_day == e.data.day && (JSON.parse(item)).m_timeslot == e.data.timeslot) {
+        if (item !== null)
+            if ((JSON.parse(item)).m_day === e.data.day && (JSON.parse(item)).m_timeslot === e.data.timeslot) {
                 window.localStorage.removeItem(key_number);
                 //$('#localSchedule-' + t_item.m_day + ' #timeslot-' + getSlotNumberFromTimeSlot(t_item.m_timeslot) + ' #ls-eventcontainer').children().remove();
                 $('#localSchedule-' + e.data.day + ' #timeslot-' + getSlotNumberFromTimeSlot(e.data.timeslot) + ' #ls-eventcontainer').children().remove();
