@@ -117,7 +117,7 @@ var News = function () {
 
                         //new: store all Data in a NewsSet Object
 
-                        var tmp_datapair = new datapair(key, val);
+                        var tmp_datapair = new datapair(key, val.replace(new RegExp("\n","g"),"\n <br />"));
                         tmp_singlenews.addDataPair(tmp_datapair);
 
                     });

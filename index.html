@@ -149,7 +149,13 @@
                     lS.loadEvent();
                 });
 
-                $('#menuitem_settings').click(function() {                    
+                var weekDay = new Date().getDay() - 1;
+
+                if ( weekDay >= 0 && weekDay  <= 4) {
+                    $('#first_link_schedule').attr("href", '#localSchedule-' + getDay(new Date().getDay() -1));
+                }
+
+                $('#menuitem_settings').click(function() {
                     var popup = $('<div class="ui-loader ui-overlay-shadow ui-corner-all ui-body-a pop in"></div>');
                     popup.css({
                         display: 'block',
@@ -159,7 +165,7 @@
                         'margin-left': '0px',
                         'padding': '10px 0px'
                     });
-                    
+
 
                     var buttonyes = $('<a href="#" data-role="button">Yes</a>');
                     buttonyes.buttonMarkup({
@@ -226,7 +232,7 @@
                         </div>
 
                         <div class="ui-block-a" id="menuitem_myschedule">
-                            <a href="#localSchedule-Montag">
+                            <a id="first_link_schedule" href="#localSchedule-Montag">
                                 <img src="images/menu_mytimetable_bs.png" />
                             </a>
                         </div>
