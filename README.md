@@ -1,5 +1,5 @@
 #SpiritMobile @GitHUb  README-FILE 
-version 0.4.5
+version 0.5.2
    					                                                 
 
 ## A. What's SpiritMobile? 
