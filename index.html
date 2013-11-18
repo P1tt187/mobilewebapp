@@ -121,7 +121,7 @@
 
                 // Show up Schedule & unbind ShowFunction from Click-Event
                 $('#menuitem_schedule').click(function() {
-                  $('#panel').css('background', 'url(images/ajax-loader.gif) no-repeat');
+                  $('#menuitem_schedule').css('background', 'url(images/ajax-loader.gif) no-repeat');
 
                     for (var g = 0; g < sd.schedules.length; g++) {
                         var name = sd.getScheduleName(sd.schedules[g].getValue());//sd.schedules[g].getValue()[0].getElementData()[4].getValue();
@@ -134,7 +134,7 @@
                     $('#menuitem_schedule').unbind('click');
                     LocalStorage.addStorageAbilityTo(lS);
                     
-                      $('#panel').css('background', 'none');
+                      $('#menuitem_schedule').css('background', 'none');
                 });
 
 
