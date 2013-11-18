@@ -513,7 +513,7 @@ var Schedule = function() {
                 }
 
                 if (i >= 4) {
-                    next_str = '';
+                    next_str = '#p3';
 
                 }
                 else {

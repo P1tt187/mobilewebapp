@@ -136,7 +136,7 @@ var LocalSchedule = function() {
                     else
                         back_str = '#localSchedule-' + getDay(i - 1);
                     if (i >= 4)
-                        next_str = '';
+                        next_str = '#p1';
                     else
                         next_str = '#localSchedule-' + getDay(i + 1);
 
