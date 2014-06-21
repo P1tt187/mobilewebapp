@@ -622,6 +622,12 @@ var Schedule = function() {
                             var event_icon;
                             var event_week_type;
 
+                            var event_group_string = '';
+                            
+                            if(event_group!=undefined&&event_group.length>0){
+                                event_group_string = 'Gruppe: ' + event_group;
+                                }
+
                             if (event_type == 'Vorlesung')
                                 event_icon = 'images/lecture.png'
                             else if (event_type == 'Uebung')
@@ -651,7 +657,7 @@ var Schedule = function() {
                                     $('<div id="event-' + k + '" class="event_borders ' + event_week_type + '"></div>')
                                     .append($('<div>').append(event_lesson))
                                     .append($('<div class="event_icon_pos">').append('<img src="' + event_icon + '"/>'))
-                                    .append($('<div>').append('Gruppe: ' + event_group))
+                                    .append($('<div>').append(event_group_string))
                                     .append($('<div>').append(event_building + ': ' + event_room))
                                     .append($('<div class="event_owner_pos">').append(event_owner)),
                                     $('<div style="height: 15px"></div>')
@@ -671,6 +677,12 @@ var Schedule = function() {
                             event_owner = this.getValueFromKey(daytimeEvents[0], 'name');
                             event_icon;
                             event_week_type;
+                            
+                            var event_group_string = '';
+                            
+                            if(event_group!=undefined&&event_group.length>0){
+                                event_group_string = 'Gruppe: ' + event_group;
+                                }
 
                             if (event_type == 'Vorlesung')
                                 event_icon = 'images/lecture.png'
@@ -701,7 +713,7 @@ var Schedule = function() {
                                     $('<div id="event-' + k + '" class="event_borders ' + event_week_type + '"></div>')
                                     .append($('<div>').append(event_lesson))
                                     .append($('<div class="event_icon_pos">').append('<img src="' + event_icon + '"/>'))
-                                    .append($('<div>').append('Gruppe: ' + event_group))
+                                    .append($('<div>').append(event_group_string))
                                     .append($('<div>').append(event_building + ': ' + event_room))
                                     .append($('<div class="event_owner_pos">').append(event_owner))
                                     );
