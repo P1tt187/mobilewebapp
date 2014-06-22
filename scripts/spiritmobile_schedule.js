@@ -622,7 +622,7 @@ var Schedule = function() {
                             var event_icon;
                             var event_week_type;
 
-                            var event_group_string = '';
+                            var event_group_string = '&nbsp;';
                             
                             if(event_group!=undefined&&event_group.length>0){
                                 event_group_string = 'Gruppe: ' + event_group;
@@ -678,7 +678,7 @@ var Schedule = function() {
                             event_icon;
                             event_week_type;
                             
-                            var event_group_string = '';
+                            var event_group_string = '&nbsp;';
                             
                             if(event_group!=undefined&&event_group.length>0){
                                 event_group_string = 'Gruppe: ' + event_group;
