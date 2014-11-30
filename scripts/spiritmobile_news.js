@@ -216,7 +216,7 @@ var News = function () {
             $('body').append('<div data-role="page" id="newsPage-' + news_id + '"></div>');
 
             //markdown converter
-            var convert = new Markdown.getSanitizingConverter.makeHtml;
+            var convert = new Markdown.getSanitizingConverter().makeHtml;
 
             console.log(convert(this.getValueFromKey('news', news_id)));
             $('#newsPage-' + news_id).append(
