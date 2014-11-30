@@ -104,8 +104,7 @@ var News = function () {
          */
         loadNews: function() {
 
-            
-            var bac = $.getJSON("../rest/1.0/news", function(data){                                       
+            var bac = $.getJSON("../rest/1.0/news", function(data){
 
                 var i = 0;
                 $.each(data, function() {
@@ -164,12 +163,7 @@ var News = function () {
             for (var j=0; j<tmp_news_set.getNews().length; j++) {
                 $('#newslist').append('<li id="listelement-' + j + '"></li>');
 
-                  //old: show semester + news_owner +  text (vertical)
-//                            $('#listelement-' + j).append('<h1> ' + this.getValueFromKey("semester", j) + '</h1>' +
-//                                                          '<p> '  + this.getValueFromKey("name", j) + '</p>'  
-//                                                         );
 
-                  //new: show semester + news_owner +  subject(horizontal)
                 $('#listelement-' + j).append('<a href="#newsPage-' + j + '"><table border="0" cellspacing="5" width="100%" style="table-layout: fixed; overflow: hidden"><tr>' + 
 
                                                     '<td width="25%"><p>' + this.getValueFromKey("semester", j) + '</p></td>' +
@@ -231,7 +225,7 @@ var News = function () {
                                 '<td>' + this.getValueFromKey('date', news_id) + 
                                 '<td align="right">' + this.getValueFromKey('writer', news_id) + 
                         '</tr></table></li>' + 
-                    '<li>' + this.getValueFromKey('news', news_id) + '</li>' + 
+                    '<li> <xmp theme="united" style="display:none;">' + this.getValueFromKey('news', news_id) + '</xmp> </li>' +
                     '</ul>' +
                 '</div>'                                                        
                 );   
