@@ -214,6 +214,10 @@ var News = function () {
 
             // Seite erstellen (DIV-Container) --> ANHÄNGEN AN BODY TAG ÄNDERN (anhängen in container in newspage)!!
             $('body').append('<div data-role="page" id="newsPage-' + news_id + '"></div>');
+
+            //markdown converter
+            var convert = new Markdown.getSanitizingConverter().makeHtml;
+
             $('#newsPage-' + news_id).append(
                 '<div data-role="header"> '                                       +
                     '<h1>' + this.getValueFromKey('subject', news_id) + '</h1>'   +
@@ -225,7 +229,7 @@ var News = function () {
                                 '<td>' + this.getValueFromKey('date', news_id) + 
                                 '<td align="right">' + this.getValueFromKey('writer', news_id) + 
                         '</tr></table></li>' + 
-                    '<li> <xmp theme="united" style="display:none;">' + this.getValueFromKey('news', news_id) + '</xmp> </li>' +
+                    '<li> ' + convert(this.getValueFromKey('news', news_id)) + ' </li>' +
                     '</ul>' +
                 '</div>'                                                        
                 );   
